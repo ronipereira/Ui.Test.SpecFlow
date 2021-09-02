@@ -34,7 +34,7 @@ namespace Ui.Test.Pages
                     i++;
                 }
             }
-            return currentProduct.Equals(produto) && currentValue.Equals(valor);     
+            return currentProduct.Equals(produto) && currentValue.Equals(valor);    
         }
     }
 }
