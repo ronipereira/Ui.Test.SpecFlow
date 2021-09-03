@@ -74,20 +74,12 @@ namespace Ui.Test.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Verificar o preço unitário de cada produto")]
-        [NUnit.Framework.TestCaseAttribute("Sauce Labs Backpack", "$29.99", null)]
-        [NUnit.Framework.TestCaseAttribute("Sauce Labs Bike Light", "$9.99", null)]
-        [NUnit.Framework.TestCaseAttribute("Sauce Labs Bolt T-Shirt", "$15.99", null)]
-        [NUnit.Framework.TestCaseAttribute("Sauce Labs Fleece Jacket", "$49.99", null)]
-        [NUnit.Framework.TestCaseAttribute("Sauce Labs Onesie", "$7.99", null)]
-        [NUnit.Framework.TestCaseAttribute("Test.allTheThings() T-Shirt (Red)", "$15.99", null)]
-        public virtual void VerificarOPrecoUnitarioDeCadaProduto(string produto, string valorUnitario, string[] exampleTags)
+        [NUnit.Framework.DescriptionAttribute("Verificar o preço unitário dos produtos")]
+        public virtual void VerificarOPrecoUnitarioDosProdutos()
         {
-            string[] tagsOfScenario = exampleTags;
+            string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            argumentsOfScenario.Add("Produto", produto);
-            argumentsOfScenario.Add("ValorUnitario", valorUnitario);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verificar o preço unitário de cada produto", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verificar o preço unitário dos produtos", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 5
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -127,80 +119,25 @@ this.ScenarioInitialize(scenarioInfo);
                             "Produto",
                             "ValorUnitario"});
                 table4.AddRow(new string[] {
-                            string.Format("{0}", produto),
-                            string.Format("{0}", valorUnitario)});
-#line 11
- testRunner.Then("o produto terá o seguinte valor", ((string)(null)), table4, "Entao ");
-#line hidden
-            }
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Verificar o preço unitário dos produtos")]
-        public virtual void VerificarOPrecoUnitarioDosProdutos()
-        {
-            string[] tagsOfScenario = ((string[])(null));
-            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verificar o preço unitário dos produtos", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 24
-this.ScenarioInitialize(scenarioInfo);
-#line hidden
-            bool isScenarioIgnored = default(bool);
-            bool isFeatureIgnored = default(bool);
-            if ((tagsOfScenario != null))
-            {
-                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((this._featureTags != null))
-            {
-                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((isScenarioIgnored || isFeatureIgnored))
-            {
-                testRunner.SkipScenario();
-            }
-            else
-            {
-                this.ScenarioStart();
-#line 25
- testRunner.Given("que acesso o site", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Dado ");
-#line hidden
-                TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Username",
-                            "Password"});
-                table5.AddRow(new string[] {
-                            "standard_user",
-                            "secret_sauce"});
-#line 26
- testRunner.When("informo as seguintes credenciais", ((string)(null)), table5, "Quando ");
-#line hidden
-#line 29
- testRunner.And("me autentico no sitema", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");
-#line hidden
-                TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Produto",
-                            "ValorUnitario"});
-                table6.AddRow(new string[] {
                             "Sauce Labs Backpack",
                             "$29.99"});
-                table6.AddRow(new string[] {
+                table4.AddRow(new string[] {
                             "Sauce Labs Bike Light",
                             "$9.99"});
-                table6.AddRow(new string[] {
+                table4.AddRow(new string[] {
                             "Sauce Labs Bolt T-Shirt",
                             "$15.99"});
-                table6.AddRow(new string[] {
+                table4.AddRow(new string[] {
                             "Sauce Labs Fleece Jacket",
                             "$49.99"});
-                table6.AddRow(new string[] {
+                table4.AddRow(new string[] {
                             "Sauce Labs Onesie",
                             "$7.99"});
-                table6.AddRow(new string[] {
+                table4.AddRow(new string[] {
                             "Test.allTheThings() T-Shirt (Red)",
                             "$15.99"});
-#line 30
- testRunner.Then("os produtos terão os seguintes valores", ((string)(null)), table6, "Entao ");
+#line 11
+ testRunner.Then("os produtos terão os seguintes valores", ((string)(null)), table4, "Entao ");
 #line hidden
             }
             this.ScenarioCleanup();

@@ -140,14 +140,14 @@ this.ScenarioInitialize(scenarioInfo);
 #line 10
  testRunner.Given("que acesso o site", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Dado ");
 #line hidden
-                TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
                             "Username",
                             "Password"});
-                table7.AddRow(new string[] {
+                table5.AddRow(new string[] {
                             "standard_user",
                             "secret_sauce"});
 #line 11
- testRunner.When("informo as seguintes credenciais", ((string)(null)), table7, "Quando ");
+ testRunner.When("informo as seguintes credenciais", ((string)(null)), table5, "Quando ");
 #line hidden
 #line 14
  testRunner.And("me autentico no sitema", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");
@@ -192,14 +192,14 @@ this.ScenarioInitialize(scenarioInfo);
 #line 19
  testRunner.Given("que acesso o site", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Dado ");
 #line hidden
-                TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
                             "Username",
                             "Password"});
-                table8.AddRow(new string[] {
+                table6.AddRow(new string[] {
                             "locked_out_user",
                             "secret_sauce"});
 #line 20
- testRunner.When("informo as seguintes credenciais", ((string)(null)), table8, "Quando ");
+ testRunner.When("informo as seguintes credenciais", ((string)(null)), table6, "Quando ");
 #line hidden
 #line 23
  testRunner.And("me autentico no sitema", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");

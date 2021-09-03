@@ -9,32 +9,17 @@ namespace Ui.Test.Pages
         private IWebElement MenuBtn => driver.FindElement(By.Id("react-burger-menu-btn"));
         private IWebElement MenuWindow => driver.FindElement(By.Id("menu_button_container"));
         private IWebElement LogoutLnk => driver.FindElement(By.Id("logout_sidebar_link"));
-        
         public void MenuClick() => MenuBtn.Click();
         public bool IsMenuWindowVisible() => MenuWindow.Displayed;
         public bool IsLogoutExist() => LogoutLnk.Displayed;
         public void GetProduto(string produto) => driver.FindElement(By.XPath($"//*[text()='{produto}']")).Click();
-
-        public bool HasProductCurrentValue(string currentProduct, string currentValue)
+        private IWebElement PrecoProdutoTxt(string produto) => driver.FindElement(By.XPath($"//*[text()='{produto}']/parent::a/../../div[@class='pricebar']/div[@class='inventory_item_price']"));
+        private bool IsPrecoProdutoTxtExist(string produto) => PrecoProdutoTxt(produto).Displayed;
+        public string GetPrecoProdutoTxt(string produto)
         {
-            int i = 1;
-            var produto = "";
-            var valor = "";
-            while (i <= 6)
-            {
-                var divBase = $"//div[@class='inventory_item'][{i}]//div[@class='inventory_item_description']//div[@class='";
-                try
-                {
-                   produto = driver.FindElement(By.XPath(divBase + $"inventory_item_label']//*[text()='{currentProduct}']")).Text;
-                   valor = driver.FindElement(By.XPath(divBase + $"pricebar']//*[text()='{currentValue.Replace("$", "")}']")).Text;
-                   return currentProduct.Equals(produto) && currentValue.Equals(valor);
-                }
-                catch(NoSuchElementException)
-                {
-                    i++;
-                }
-            }
-            return currentProduct.Equals(produto) && currentValue.Equals(valor);    
+            if (IsPrecoProdutoTxtExist(produto))
+                return PrecoProdutoTxt(produto).Text;
+            return "";
         }
     }
 }
